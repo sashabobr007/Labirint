@@ -1,0 +1,39 @@
+local physics=require("physics")
+physics.start( )
+physics.setGravity( 0, 0 )
+local sheetOptions={
+frames={
+		{
+			x=891,
+			y=650,
+			width =42,
+			height=60
+		},
+		{
+			x=478,
+			y=0,
+			width =102,
+			height=287
+
+		},
+		
+	},
+}
+
+local objectSheet=graphics.newImageSheet( "forest.png",sheetOptions )
+local backGroup=display.newGroup( )
+
+local mainGroup=display.newGroup( )
+local background=display.newImageRect( backGroup, "Surface_of_planets_376711.jpg",720,1280 )
+background.x=display.contentCenterX
+background.y=display.contentCenterY
+
+local tree=display.newImageRect( mainGroup, objectSheet, 1, 42, 60 )
+tree.x=display.contentCenterX
+tree.y=display.contentCenterY
+	
+-- physics.addBody(newtree, "static")
+-- newtree.ID="tree"
+local tree1=display.newImageRect( mainGroup, objectSheet, 2, 102, 287 )
+tree1.x=display.contentCenterX+100
+tree1.y=display.contentCenterY-100
